@@ -1,14 +1,11 @@
-name: Docker Image CI
+name: Main
 on:
-  push:
-    branches: master
-  pull_request:
-    branches: master
   workflow_dispatch
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      - name: Build the Docker image
-        run: docker build . --file Dockerfile --tag canberktestcd:$(date +%s)
+      - uses: actions/checkout@master
+      - name: Pause for 25 seconds
+        run: |
+          sleep 25
