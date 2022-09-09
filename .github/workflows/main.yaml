@@ -2,12 +2,8 @@ name: Main
 on:
   push:
     branches: master
-  workflow_dispatch:
-    inputs:
-      source:
-        description: 'Source of event'
-        required: false
-        default: 'No source specified'
+  repository_dispatch:
+    types: [deploy]
 jobs:
   build:
     runs-on: ubuntu-latest
